@@ -97,14 +97,16 @@ function App() {
 
   const cargarDatos = async () => {
     const dashboardResponse = await fetch(
-      `${API_URL}/api/dashboard`);
+     `${API_URL}/api/dashboard`
+    );
 
 
     const dashboardData = await dashboardResponse.json();
     setDashboard(dashboardData);
 
     const pedidosResponse = await fetch(
-      `${API_URL}/api/pedidos`);
+  `${API_URL}/api/pedidos`
+    );
 
     const pedidosData = await pedidosResponse.json();
     setPedidos(pedidosData);
@@ -117,7 +119,8 @@ function App() {
     if (!confirm("¿Deseas eliminar este pedido?")) {
       return;
     }
-    await fetch(`${API_URL}/api/pedidos/${id}`,
+    await fetch(
+  `${API_URL}/api/pedidos/${id}`,
       {
         method: "DELETE"
       }
@@ -150,7 +153,8 @@ function App() {
       return;
     }
 
-    await fetch(`${API_URL}/api/pedidos`,
+    await fetch(
+    `${API_URL}/api/pedidos/`,
       {
         method: "POST",
         headers: {
@@ -184,8 +188,8 @@ function App() {
   // EDITAR PEDIDOS
   const guardarCambios = async () => {
     await fetch(
-      `http://localhost:5081/api/pedidos/${pedidoEditando.id}`,
-      {
+         `${API_URL}/api/pedidos/${pedidoEditando.id}`,
+        {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
