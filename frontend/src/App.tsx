@@ -27,6 +27,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
 function App() {
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5081";
   //pedidos en dashboard
   const [dashboard, setDashboard] = useState<any>(null);
   const [pedidos, setPedidos] = useState<any[]>([]);
@@ -96,16 +97,14 @@ function App() {
 
   const cargarDatos = async () => {
     const dashboardResponse = await fetch(
-      "http://localhost:5081/api/dashboard"
-    );
+      `${API_URL}/api/dashboard`);
 
 
     const dashboardData = await dashboardResponse.json();
     setDashboard(dashboardData);
 
     const pedidosResponse = await fetch(
-      "http://localhost:5081/api/pedidos"
-    );
+      `${API_URL}/api/pedidos`);
 
     const pedidosData = await pedidosResponse.json();
     setPedidos(pedidosData);
@@ -118,8 +117,7 @@ function App() {
     if (!confirm("¿Deseas eliminar este pedido?")) {
       return;
     }
-    await fetch(
-      `http://localhost:5081/api/pedidos/${id}`,
+    await fetch(`${API_URL}/api/pedidos/${id}`,
       {
         method: "DELETE"
       }
@@ -152,8 +150,7 @@ function App() {
       return;
     }
 
-    await fetch(
-      `http://localhost:5081/api/pedidos/`,
+    await fetch(`${API_URL}/api/pedidos`,
       {
         method: "POST",
         headers: {
