@@ -1,0 +1,15 @@
+{
+  "steps": {
+    "install": {
+      "cmds": [
+        "mkdir -p /root/.nuget/packages",
+        "dotnet restore --no-cache"
+      ]
+    },
+    "build": {
+      "cmds": [
+        "dotnet publish -c Release -o out"
+      ]
+    }
+  }
+}
