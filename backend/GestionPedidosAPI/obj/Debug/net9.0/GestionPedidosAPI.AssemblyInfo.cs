@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionPedidosAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4aa1e8eb8bec99371bcf5fc43ef49716df69ca7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8716f86b20837f7eb94041172b86352be13c0fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionPedidosAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionPedidosAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
