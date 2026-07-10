@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5081";
+builder.WebHost.UseUrls($"http://*:{port}");
+
 // Base de datos
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
